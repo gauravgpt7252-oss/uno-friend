@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNO Friends</title>
 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #171923;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.container {
+  max-width: 420px;
+  margin: 50px auto;
+  background: #252a3a;
+  padding: 25px;
+  border-radius: 18px;
+}
+
+h1 {
+  font-size: 38px;
+  color: #ffcc00;
+}
+
+p {
+  color: #cbd0df;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create {
+  background: #e53935;
+  color: white;
+}
+
+.join {
+  background: #ffca28;
+  color: #222;
+}
+
+#message {
+  margin-top: 18px;
+  color: #8ee99b;
+  overflow-wrap: anywhere;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>UNO FRIENDS</h1>
+
+<p>Play UNO with your friends online!</p>
+
+<button class="create" onclick="createRoom()">
+CREATE ROOM
+</button>
+
+<hr>
+
+<input
+  type="text"
+  id="roomCode"
+  placeholder="Enter Room Code"
+>
+
+<input
+  type="text"
+  id="playerName"
+  placeholder="Enter Your Name"
+>
+
+<button class="join" onclick="joinRoom()">
+JOIN ROOM
+</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+function createRoom() {
+  document.getElementById("message").innerText =
+    "Room system will be activated after Firebase setup.";
+}
+
+function joinRoom() {
+  const code = document.getElementById("roomCode").value.trim();
+  const name = document.getElementById("playerName").value.trim();
+
+  if (!name || !code) {
+    document.getElementById("message").innerText =
+      "Please enter your name and room code.";
+    return;
+  }
+
+  document.getElementById("message").innerText =
+    "Online joining will be activated after Firebase setup.";
+}
+</script>
+
+</body>
+</html>
+ 
