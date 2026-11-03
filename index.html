@@ -108,7 +108,27 @@ JOIN ROOM
 
 </div>
 
-<script>
+<script>// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAIt4wj2TjH83uTecBwSWfFA14Gvk01e80",
+  authDomain: "uno-81930.firebaseapp.com",
+  projectId: "uno-81930",
+  storageBucket: "uno-81930.firebasestorage.app",
+  messagingSenderId: "910331283053",
+  appId: "1:910331283053:web:1aa5f7ffc49414b1c42164",
+  measurementId: "G-LGQ9RLYLB7"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 function createRoom() {
   document.getElementById("message").innerText =
     "Room system will be activated after Firebase setup.";
