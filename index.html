@@ -130,6 +130,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
   const database = firebase.database();
 const analytics = getAnalytics(app);
+console.log("Firebase test running")
 function createRoom() {
   document.getElementById("message").innerText =
     "Room system will be activated after Firebase setup.";
